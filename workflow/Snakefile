@@ -1,0 +1,51 @@
+import os
+import sys
+import yaml
+
+
+configfile: "workflow/config/config.json"
+
+include: "rules/srsly.smk"
+
+include: "rules/srsly_umi.smk"
+
+
+library_names = config.get("libraries", "NO_LIBRARY_SPECIFIED").split(",")
+
+
+def output_files(config, lib):
+    basename = "{}/{}/{}".format(config["resultsdir"], lib, lib)
+    if config["umi"] == 'true':
+        output_files = multiext(
+            basename,
+            ".umi.bam.bai",
+            ".fgbio.cons.bam",
+            ".stats"
+        )
+    else:
+        output_files = multiext(
+            basename,
+            ".bam.bai",
+            ".stats"
+        )
+    return output_files
+
+
+def create_library_dict(libs, config):
+    out_dict = {}
+    for lib in libs:
+        out_dict[lib] = {}
+        out_dict[lib]['outputs'] = output_files(config, lib)
+    return out_dict
+    
+
+library_dict = create_library_dict(library_names, config)
+
+
+final_outputs = [f for fi in library_dict.values() for f in fi["outputs"]]
+
+rule make_all:
+    message:
+        "Finished run for {input}"
+    input:
+        final_outputs,

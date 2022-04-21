@@ -1,0 +1,5 @@
+{
+    "resultsdir": "/PATH/TO/RESULTS/",
+    "indir": "/PATH/TO/RAW/FQ",
+    "ref": "/PATH/TO/REFERENCE/GENOME"
+}
