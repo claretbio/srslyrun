@@ -18,15 +18,18 @@ please use our SRSLYumi python package (more info at https://github.com/claretbi
 In order run, this software requires an installation of conda- installation instructions can be found [here](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links).
 
 Required Arguments
-
-    `--fastqdir` : the directory containing the raw fastqs you wish to process (defaults to current working directory)
-    
-    `--resultsdir` : the directory you would like the output to be in (defaults to current working directory)
     
     `--reference` : a path to the reference genome you wish to align to (no default, this must be provided, and must be a file ending in `.fasta` or `.fa`)
     
     `--libraries` or `--libfile`: the library IDs you would like analyzed in comma separated format and in a file with one id per line, respectively
     
+Optional Arguments
+
+
+    `--fastqdir` : the directory containing the raw fastqs you wish to process (if not specified, defaults to current working directory)
+    
+    `--resultsdir` : the directory you would like the output to be in (if not specified, defaults to current working directory)
+
 The library IDs provided should match the beginning of the fastq files, for example the library ID for fastq files named `lib1_R1.fastq.gz` and `lib1_R2.fastq.gz` would be `lib1`. This can be provided directly on the command line with a comma separated list like `--libraries lib1,lib2` or as a file that lists one library ID per line with `--libfile libfile.txt`.
 
 an example command:
