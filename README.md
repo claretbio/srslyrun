@@ -15,7 +15,7 @@ This software takes in raw fastqs and trims adapters, aligns to a user-specified
 reference genome, and marks duplicates. For UMI aware demultiplexing of SRSLY libraries
 please use our SRSLYumi python package (more info at https://github.com/claretbio/SRSLYumi). 
 
-In order to run, this software requires an installation of conda- installation instructions can be found [here](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links).
+In order to run, this software requires an installation of conda. For speed, we recommend [mamba](https://mamba.readthedocs.io/en/latest/installation.html) which is best installed from [mambaforge](https://github.com/conda-forge/miniforge#mambaforge). If you prefer to use standard conda, installation instructions can be found [here](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links). 
 
 Required Arguments
     
