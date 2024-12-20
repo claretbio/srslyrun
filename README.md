@@ -37,3 +37,7 @@ an example command:
 `srsly runsamples --fastqdir /home/user/fastqfiles --resultsdir /home/user/srslyanalysis --reference /home/user/genomes/hg19.fa --libraries lib1,lib2,lib3`
 
 For reproducibility's sake and to ensure appropriate versions we use snakemake wrappers for many of the tools in this pipeline, which are often slow to create the first time they are used. As a result, your first time running the software may take a long time - don't worry, this is totally normal!
+
+#Test Data
+
+Raw fastqs are provided in the test data directory. These fastqs are from a UMI aware run and should be run with the E. coli reference genome, which can be downloaded [here](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000005845.2/). 
